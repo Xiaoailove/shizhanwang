@@ -19,13 +19,26 @@
         <TopicList></TopicList>
         <Split></Split>
         <ZhongChou></ZhongChou>
+        <Split></Split>
+        <CategoryModule></CategoryModule>
+        <Split></Split>
+        <CategoryModule></CategoryModule>
+        <Split></Split>
+        <CategoryModule></CategoryModule>
+        <Split></Split>
+        <CategoryModule></CategoryModule>
+        <Split></Split>
+        <CategoryModule></CategoryModule>
+        <Split></Split>
+        <CategoryModule></CategoryModule>
+        
       </div>
   </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import BScroll from 'better-scroll'
+ import BScroll from 'better-scroll'
  import NavHeader from './components/NavHeader/NavHeader.vue'
  import MSwiper from './components/MSwiper/MSwiper.vue'
  import SmallNav from './components/SmallNav/SmallNav.vue'
@@ -37,6 +50,7 @@ import BScroll from 'better-scroll'
  import PopularItem from './components/PopularItem/PopularItem.vue'
  import TopicList from './components/TopicList/TopicList.vue'
  import ZhongChou from './components/ZhongChou/ZhongChou.vue'
+ import CategoryModule from './components/CategoryModule/CategoryModule.vue'
   export default {
     name:'Misite',
     mounted(){
@@ -61,7 +75,8 @@ import BScroll from 'better-scroll'
       NewGoods,
       PopularItem,
       TopicList,
-      ZhongChou
+      ZhongChou,
+      CategoryModule
     }
   }
 </script>

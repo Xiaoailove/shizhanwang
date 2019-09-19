@@ -2,13 +2,10 @@
   <div class="flashSale">
     <div class="flashSaleHeader">
       <div class="leftInfo">
-        <span class="leftTitle">人气推荐</span>
+        <span class="leftTitle">众筹</span>
       </div>
       <span class="more">更多&gt;</span>
     </div>
-
-
-
     <ul class="zhongChouList">
       <li>
         <img src="https://yanxuan.nosdn.127.net/7687670037190e2b4f7391b1a5bf8624.png?imageView&thumbnail=210x210&quality=75" alt="">
@@ -62,6 +59,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
+@import '../../../../common/stylus/mixins.styl'
 .flashSale
   .flashSaleHeader
     display flex
@@ -82,14 +80,45 @@
     padding-left 20px
     display flex
     flex-direction column
+    margin-top 10px
+    top-border-1px(#cccccc)
     li
       height 250px
       display flex
-      &:first-child
-        border-top 1px solid #d8d8d8
-        padding-top 20px
-        img 
-          width 210px
-          height 210px
-          background-color #f5f5f5
+      img 
+        width 210px
+        height 210px
+        background-color #f5f5f5
+      .zhongchouInfo
+        height 100%
+        margin-left 30px
+        font-size 24px
+        line-height 36px
+        display flex
+        flex-direction column
+        .zhongchouTitle
+          color #7f7f7f
+        .zhongchouPrice
+          color #7f7f7f
+          margin-top 7.5px
+        .zhongchouBox
+          display flex
+          align-items center
+          justify-content center
+          margin-top 10px
+          .zhouchouProgress
+            width 360px
+            height 6px
+            margin-right 20px
+            background #d8d8d8
+            display flex
+            justify-content flex-start
+            .bg
+              height 100%
+              background-color #fea438
+          .zhouchouPre
+            color green
+        .zhouchouNum
+          margin-top 40px
+          color red
 </style>
