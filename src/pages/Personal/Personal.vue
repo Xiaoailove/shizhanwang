@@ -1,60 +1,89 @@
 <template>
   <div>
-    <div class="personnalContainer">
-    <div class="personHeader">
-      <span class="item_icon">
-          <i class="iconfont icon-shouye"></i>
-      </span>
-      <img src="./images/logo.png" alt="">
-      <div class="right">
-        <span class="item_icon rightA">
-          <i class="iconfont icon-sousuo"></i>
+    <!-- 手机号登录 -->
+      <PersonnalPhone v-show="isShowPhone"/>
+
+      <!-- 邮箱登录 -->
+      <PersonnalEmail v-show="isShowEmail"/>
+    <div class="personnalContainer" ref="reference">
+      <div class="personHeader">
+        <span class="item_icon">
+            <i class="iconfont icon-shouye"></i>
         </span>
-        <span class="item_icon rightB">
-            <i class="iconfont icon-gouwuche"></i>
-        </span>
-      </div>
-    </div>
-
-
-    <div class="personnalMain">
-      <div class="logTop">
-        <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
-      </div>
-
-
-      <div class="logBtn">
-        <div class="logBtnT">
-          <span class="item_icon">
-            <i class="iconfont icon-shouji"></i>
+        <img src="./images/logo.png" alt="">
+        <div class="right">
+          <span class="item_icon rightA">
+            <i class="iconfont icon-sousuo"></i>
           </span>
-          <p>手机号快捷登录</p>
-        </div>
-        <div class="logBtnB">
-          <span class="item_icon">
-            <i class="iconfont icon-youxiang"></i>
+          <span class="item_icon rightB">
+              <i class="iconfont icon-gouwuche"></i>
           </span>
-          <p>邮箱账号登录 </p>
         </div>
       </div>
 
-      <WeixinNav></WeixinNav>
+
+      <div class="personnalMain">
+        <div class="logTop">
+          <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
+        </div>
+
+
+        <div class="logBtn">
+          <div class="logBtnT" @click="showPhone">
+            <span class="item_icon">
+              <i class="iconfont icon-shouji"></i>
+            </span>
+            <p>手机号快捷登录</p>
+          </div>
+          <div class="logBtnB" @click="showEmail">
+            <span class="item_icon">
+              <i class="iconfont icon-youxiang"></i>
+            </span>
+            <p>邮箱账号登录 </p>
+          </div>
+        </div>
+        <!-- 底部微信 -->
+        <WeixinNav></WeixinNav>
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import WeixinNav from './WeixinNav/WeixinNav.vue'
+import WeixinNav from './components/WeixinNav/WeixinNav.vue'
+import PersonnalEmail from './components/PersonnalEmail/PersonnalEmail.vue'
+import PersonnalPhone from './components/PersonnalPhone/PersonnalPhone.vue'
   export default {
+    data () {
+      return {
+        isShowPhone:false,
+        isShowEmail:false
+      }
+    },
+    methods:{
+      showPhone(){
+       let divNode=this.$refs.reference
+       divNode.style.display="none"
+        this.isShowPhone=!this.isShowPhone
+      },
+      showEmail(){
+        let divNode=this.$refs.reference
+        divNode.style.display="none"
+        this.isShowEmail=!this.isShowEmail
+      }
+    },
     components:{
-      WeixinNav
+      WeixinNav,
+      PersonnalEmail,
+      PersonnalPhone
     }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .personnalContainer
+    position absolute
+    z-index 0
     width 100%
     height 100%
     background-color #f2f5f4
