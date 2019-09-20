@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view v-if="$route.meta.isShowFooter"/>
-    <FoodGuide/>
+    <router-view />
+    <FoodGuide v-if="$route.meta.isShowFooter"/>
   </div>
 </template>
 
@@ -21,5 +21,10 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
+  #app
+    width 100%
+    height 100%
+    div
+      width 100%
+      height 100%
 </style>

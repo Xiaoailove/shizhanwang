@@ -10,7 +10,7 @@ Vue.component('Split', Split)
 Vue.component(ScrollTab.name, ScrollTab);
 Vue.component(ScrollTabPanel.name, ScrollTabPanel);
 // 引入css
-import 'vue-ydui/dist/ydui.base.css'
+//import 'vue-ydui/dist/ydui.base.css'
 new Vue({
   render: h => h(App),
   router

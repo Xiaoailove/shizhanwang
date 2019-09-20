@@ -1,42 +1,40 @@
 <template>
   <div>
-    <NavHeader></NavHeader>
-    <div class="wrap">
-      <div>
-        <MSwiper></MSwiper>
-        <SmallNav></SmallNav>
-        <ShopSwiper></ShopSwiper>
-        <CheapArea></CheapArea>
-        <Split></Split>
-        <Personal></Personal>
-        <Split></Split>
-        <FlashSale></FlashSale>
-        <Split></Split>
-        <NewGoods></NewGoods>
-        <Split></Split>
-        <PopularItem></PopularItem>
-        <Split></Split>
-        <TopicList></TopicList>
-        <Split></Split>
-        <ZhongChou></ZhongChou>
-        <Split></Split>
-        <CategoryModule></CategoryModule>
-        <Split></Split>
-        <CategoryModule></CategoryModule>
-        <Split></Split>
-        <CategoryModule></CategoryModule>
-        <Split></Split>
-        <CategoryModule></CategoryModule>
-        <Split></Split>
-        <CategoryModule></CategoryModule>
-        <Split></Split>
-        <CategoryModule></CategoryModule>
-        
+      <NavHeader></NavHeader>
+      <div class="wrap">
+        <div>
+          <MSwiper></MSwiper>
+          <SmallNav></SmallNav>
+          <ShopSwiper></ShopSwiper>
+          <CheapArea></CheapArea>
+          <Split></Split>
+          <Personal></Personal>
+          <Split></Split>
+          <FlashSale></FlashSale>
+          <Split></Split>
+          <NewGoods></NewGoods>
+          <Split></Split>
+          <PopularItem></PopularItem>
+          <Split></Split>
+          <TopicList></TopicList>
+          <Split></Split>
+          <ZhongChou></ZhongChou>
+          <Split></Split>
+          <CategoryModule></CategoryModule>
+          <Split></Split>
+          <CategoryModule></CategoryModule>
+          <Split></Split>
+          <CategoryModule></CategoryModule>
+          <Split></Split>
+          <CategoryModule></CategoryModule>
+          <Split></Split>
+          <CategoryModule></CategoryModule>
+          <Split></Split>
+          <CategoryModule></CategoryModule>
+        </div>
       </div>
-  </div>
-  </div>
+    </div>
 </template>
-
 <script type="text/ecmascript-6">
  import BScroll from 'better-scroll'
  import NavHeader from './components/NavHeader/NavHeader.vue'

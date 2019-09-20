@@ -36,9 +36,6 @@ export default [
   {
     path:'/personal',
     component:Personal,
-    meta:{
-      isShowFooter:true
-    }
   },
   {
     path:'/',
