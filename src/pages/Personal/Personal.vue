@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- 手机号登录 -->
-      <PersonnalPhone v-show="isShowPhone"/>
+      <PersonnalPhone  v-if="isShowPhone" :divNode="divNode" ref="ceshi" :isShowPhone="isShowPhone"/>
 
       <!-- 邮箱登录 -->
-      <PersonnalEmail v-show="isShowEmail"/>
-    <div class="personnalContainer" ref="reference">
+      <PersonnalEmail v-if="isShowEmail" :divNode="divNode"/>
+    <div class="personnalContainer" ref="reference" :class="{on:isShowPhone||isShowEmail} ">
       <div class="personHeader">
-        <span class="item_icon">
+        <span class="item_icon"  @click="$router.replace('/')">
             <i class="iconfont icon-shouye"></i>
         </span>
         <img src="./images/logo.png" alt="">
@@ -57,18 +57,28 @@ import PersonnalPhone from './components/PersonnalPhone/PersonnalPhone.vue'
     data () {
       return {
         isShowPhone:false,
-        isShowEmail:false
+        isShowEmail:false,
+        divNode:''
       }
+    },
+    mounted(){
+      let divNode=this.$refs.reference
+      this.divNode=divNode
     },
     methods:{
       showPhone(){
-       let divNode=this.$refs.reference
-       divNode.style.display="none"
+       
         this.isShowPhone=!this.isShowPhone
+        // console.log(1)
+        if(!this.isShowPhone){
+          let divNode=this.$refs.reference
+          divNode.style.display="block"
+          //this.isShowPhone=true
+        }
       },
       showEmail(){
-        let divNode=this.$refs.reference
-        divNode.style.display="none"
+        //let divNode=this.$refs.reference
+        //divNode.style.display="none"
         this.isShowEmail=!this.isShowEmail
       }
     },
@@ -87,6 +97,8 @@ import PersonnalPhone from './components/PersonnalPhone/PersonnalPhone.vue'
     width 100%
     height 100%
     background-color #f2f5f4
+    &.on
+      display none
     .personHeader
       width 100%
       height 88px

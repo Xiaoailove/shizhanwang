@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <div class="personnalContainer">
+  <div v-show="showPerson">
+    <div class="personnalContainer" ref="referenceP" :class="{onN:!showPerson}">
     <div class="personHeader">
-      <span class="item_icon">
+      <span class="item_icon" @click="$router.replace('/')">
           <i class="iconfont icon-shouye"></i>
       </span>
       <img src="../../images/logo.png" alt="">
@@ -22,9 +22,19 @@
         <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
       </div>
       <form class="submit">
-        <input type="text" placeholder="请输入手机号">
+        <input type="text" placeholder="请输入手机号" 
+        name="phone" 
+        v-validate="'required|mobile'" 
+        v-model="phone" maxlength="11">
+        <span v-show="errors.has('phone')" style="color:red">{{ errors.first('phone')}}</span>
         <div class="sin">
-          <input type="text" placeholder="请输入短信验证码">
+          <input type="text"  
+          maxlength="6"
+          name="code"
+          v-validate="{required: true, regex: /^\d{6}$/}"
+          v-model="code"
+          placeholder="请输入短信验证码">
+          <span v-show="errors.has('code')" style="color:red">{{ errors.first('code')}}</span>
           <div class="sinM">获取验证码</div>
         </div>
         <div class="problm">
@@ -33,7 +43,7 @@
         </div>
         <div class="login">登录</div>
       </form>
-      <div class="anthor">其他登录方式></div>
+      <div class="anthor" @click="show">其他登录方式></div>
     </div>
     </div>
   </div>
@@ -41,6 +51,34 @@
 
 <script type="text/ecmascript-6">
   export default {
+    props: ['divNode','isShowPhone'],
+    data() {
+      return {
+        showPerson:true,
+        phone:'',
+        code:''
+      }
+    },
+    // updated(){
+    //   console.log(1)
+    //   if(!this.showPerson){
+    //        console.log(this.$refs.referenceP)
+    //        //this.$refs.referenceP.style.display="block"
+    //        //this.isShowPhone=true
+    //        this.showPerson=true
+    //      }
+    // },
+    methods: {
+      show(){
+         let newDivNode=this.divNode
+         //this.$refs.referenceP.style.display="none"
+         //this.showPerson=!this.showPerson
+         
+        newDivNode.style.display="block"
+        //console.log(this.isShowPhone)
+        this.showPerson=!this.showPerson
+      }
+    },
   }
 </script>
 
@@ -51,6 +89,8 @@
     width 100%
     height 100%
     background-color white
+    &.onN
+    display none
     .personHeader
       width 100%
       height 88px
