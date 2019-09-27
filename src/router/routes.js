@@ -4,6 +4,7 @@ const Categorys=()=>import('../pages/Categorys/Categorys.vue')
 const FindShop=()=>import('../pages/FindShop/FindShop.vue')
 const ShopCar=()=>import('../pages/ShopCar/ShopCar.vue')
 const Personal=()=>import('../pages/Personal/Personal.vue')
+const Search=()=>import('../pages/Search/Search.vue')
 export default [
   {
     path:'/msite',
@@ -20,7 +21,8 @@ export default [
     }
   },
   {
-    path:'/findshop',
+    name:'findShop',
+    path:'/findshop/:id',
     component:FindShop,
     meta:{
       isShowFooter:true
@@ -36,6 +38,10 @@ export default [
   {
     path:'/personal',
     component:Personal,
+  },
+  {
+    path:'/search',
+    component:Search,
   },
   {
     path:'/',

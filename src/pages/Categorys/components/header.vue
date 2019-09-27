@@ -3,12 +3,17 @@
     <span class="item_icon">
       <i class="iconfont icon-sousuo"></i>
     </span>
-    <input type="text" placeholder="搜索商品,共22175款好物" class="lineMiddle">
+    <input type="text" placeholder="搜索商品,共22175款好物" class="lineMiddle" @click="goSearch()">
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   export default {
+    methods: {
+      goSearch(){
+        this.$router.push('/search')
+      }
+    },
   }
 </script>
 

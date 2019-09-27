@@ -2,14 +2,9 @@
   <div class="swiper">
     <div class="swiper-container swiper-containerNe">
       <div class="swiper-wrapper">
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/ccfde8af22184921682d049b00b34be2.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/e03c9b74a854d4c31c77720dc1e8433a.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/31b6cd9fb5c3cdd627c3d84d45abaca7.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/aecef1569c32c725cf2a29f1fddf25ca.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/96055517125bb2233636dee9fc1ca183.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/1eba77c8f34e1498b83cabca593f3a3f.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/9c75dabb86e08cffcd0b4c95b4035b57.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-          <div class="swiper-slide"><img  src="https://yanxuan.nosdn.127.net/b0098527aac5942dfefc0efd9a27e4f6.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
+          <div class="swiper-slide" v-for="(swiper, index) in categorys[currentIndex].swipers" :key="index">
+            <img :src="swiper.imgAvater1" alt="">
+          </div>
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
@@ -20,8 +15,13 @@
 <script type="text/ecmascript-6">
   import Swiper from 'swiper'
   import "../../../common/swiper/swiper.css"
+  import {mapState} from 'vuex'
   export default {
+    props:['currentIndex'],
     name:'MSwiper',
+    computed:{
+      ...mapState(['categorys'])
+    },
     mounted(){
       new Swiper ('.swiper-containerNe', {
         autoplay:1000,

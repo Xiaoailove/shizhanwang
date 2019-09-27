@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
-    
+    <keep-alive>
+      <router-view />
+    </keep-alive>
     <FoodGuide v-if="$route.meta.isShowFooter"/>
   </div>
 </template>

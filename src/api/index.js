@@ -1,9 +1,22 @@
 //包含多个发送ajax请求的函数
 import ajax from './ajax'
+const BASE='/yanxuan'
 //const BASE='/api'
 export const login=(email,sin)=>ajax.post('/login',{
   email,
   sin
+})
+export const reqCategorys=()=>ajax('/reqcategorys')
+export const reqTab=()=>ajax('/tab')
+
+
+export const reqSearchData=()=>ajax.post(BASE+'xhr/search/init.json')
+export const reqSearchResult=(keywordPrefix)=>ajax({
+  method:'GET',
+  url:BASE+`xhr/search/searchAutoComplete.json?keywordPrefix=${keywordPrefix}`,
+  // params:{
+  //   keywordPrefix
+  // }
 })
 // //1、 根据经纬度获取位置详情
 // export const reqAddress=(latitude,longitude)=>ajax({

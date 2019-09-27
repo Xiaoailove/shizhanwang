@@ -12,7 +12,7 @@
       </span>
       <span>分类</span>
     </a>
-    <a href="javascript:;" class="guide_item" @click="goTo('/findshop')" :class="{on:isCurrent('/findshop')}">
+    <a href="javascript:;" class="guide_item" @click="goTo('/findshop/0')" :class="{on:isCurrent('/findshop/0')}">
       <span class="item_icon">
         <i class="iconfont icon-tupian"></i>
       </span>
